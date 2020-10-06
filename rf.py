@@ -12,8 +12,8 @@ def randomForestInLoop(i):
     x_dev = x_train_all[54000:]
     y_dev = y_train_all[54000:]
     
-    n = round(i/1000)
-    m = i - (n * 1000)
+    n = round(i/1000)   ## Use this to transform input XXXYYY into XXX YYY
+    m = i - (n * 1000)  ## Use this to transform input XXXYYY into XXX YYY
     rfc = RandomForestClassifier(random_state=0, n_estimators = n, max_depth = m)
     rfc.fit(x_train, y_train)
     train_acc = round(accuracy_score(y_train, rfc.predict(x_train)), 4)
